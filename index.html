@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ProCon</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    </head>
+    <body onload="promptUserProblem()">
+        <div class="container">
+            <h1 class="title">Pro-Con</h1>
+            <div class="table">
+                <h2 id="problem">Problem</h2>
+                <div class="listTop">
+                    <h2>Pros</h2>
+                    <h2>Cons</h2>
+                </div>
+                
+                <div class="main">
+                    <div class="pros">
+                        <ul class="proList">
+                            <li class="list-item">
+                                <textarea class="proTemplate"></textarea>
+                                <button onclick="removeParent(this)" id="btnDel">Delete Pro</button>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="cons">
+                        <ul class="conList">
+                            <li class="list-item">
+                                <textarea class="proTemplate"></textarea>
+                                <button onclick="removeParent(this)" id="btnDel">Delete Con</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="btnArea">
+                    <div class="btnContainer">
+                        <input type="image" src="/img/add.png" class="addPro">
+                    </div>
+    
+                    <div class="btnContainer">
+                        <img src="/img/add.png" class="addCon">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            const textarea = document.querySelector('textarea');
+            textarea.addEventListener('keyup', e =>{
+                textarea.style.height = 'auto';
+                let scHeight = e.target.scrollHeight;
+                textarea.style.height = `${scHeight}px`
+            });
+        </script>
+
+        <script>
+            $(document).ready(function(){
+                $('.addPro').click(function(){
+                    $('.proList').append(`
+                    <li class="list-item">
+                        <textarea class="proTemplate"></textarea>
+                        <button onclick="removeParent(this)" id="btnDel">Delete Pro</button>
+                    </li>`);
+                });
+
+                $('.addCon').click(function(){
+                    $('.conList').append(`
+                    <li class="list-item">
+                        <textarea class="proTemplate"></textarea>
+                        <button onclick="removeParent(this)" id="btnDel">Delete Con</button>
+                    </li>`);
+                });
+            });
+        </script>
+
+        <script>
+            function removeParent(element){
+                $(element).parent('li').remove();
+            }
+
+            function promptUserProblem(){
+                let problem = prompt("Please Enter Your Issue");
+                if(problem == null || problem ==''){
+                    alert("Please Enter A Valid Problem");
+                    promptUserProblem();
+                }else{
+                    document.getElementById('problem').innerHTML = problem;
+                }
+            }
+        </script>
+    </body>
+</html>

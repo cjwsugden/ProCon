@@ -1,0 +1,118 @@
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: linear-gradient(#84e3d9, #b7ede7)
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+.title{
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 5em;
+}
+
+.table{
+    justify-content: center;
+    background-color: white;
+    color: black;
+    width: 80%;
+    margin: auto;
+    border: 10px solid black;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#problem{
+    text-align: center;
+    font-size: 3em;
+    padding-top: 0;
+    margin-top: 0;
+    font-family: 'Dancing Script', cursive;
+}
+
+.listTop{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+    text-align: center;
+}
+
+.conList{
+    list-style: none;
+    padding: 0;
+}
+
+.proList{
+    list-style: none;
+    padding: 0;
+}
+
+.pros{
+    width: 95%;
+    margin-bottom: 2%;
+}
+
+.cons{
+    width: 95%;
+    margin-bottom: 2%;
+}
+
+.proTemplate{
+    overflow: hidden;
+    resize: none;
+    width: 90%;
+    border: none;
+    border-bottom: 2px grey solid;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    padding-bottom: 0px;
+    
+}
+
+#btnArea{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+}
+
+.btnContainer{
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    padding-bottom:5px;
+    display: flex;
+    justify-content: center;
+}
+
+.list-item{
+    position: relative;
+    display: grid;
+    grid-template-columns: 90% 10%;
+}
+
+#btnDel{
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
